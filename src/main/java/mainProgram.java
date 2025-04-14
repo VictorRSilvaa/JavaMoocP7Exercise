@@ -10,8 +10,14 @@ public class mainProgram {
         Scanner scan = new Scanner(System.in);
         Database db = new Database();
 
+        System.out.println("*List of commands*");
+        System.out.println("Add - adds a new bird");
+        System.out.println("Observation - adds an observation for a bird");
+        System.out.println("All - Prints all birds");
+        System.out.println("One - Prints one bird");
+
         while (true) {
-            System.out.println("?");
+            System.out.println("Enter a command:");
             String command = scan.nextLine();
 
             if (command.equals("Quit") || command.equals("quit")) {
@@ -24,6 +30,8 @@ public class mainProgram {
                 addCommand(scan, db);
             } else if (command.equals("One") || command.equals("one")) {
                 printOneBirdCommand(scan, db);
+            } else {
+                System.out.println("*Not a valid command. Try again*");
             }
         }
     }
